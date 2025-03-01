@@ -5,7 +5,8 @@ import { loadMatches } from '../../features/match-tracker/model/matches-slice.ts
 import { MatchList } from '../../features/match-tracker/ui/match-list';
 import s from './match-tracker.module.scss';
 import { useDispatch } from 'react-redux';
-import {Button} from "../../shared/ui/button";
+import { Button } from "../../shared/ui/button";
+import { ErrorMessage } from '../../shared/ui/error-message';
 
 const useAppDispatch = () => useDispatch<AppDispatch>();
 
@@ -21,14 +22,16 @@ export const MatchTracker: FC = () => {
     <div className={s.matchTracker}>
       <div className={s.header}>
         <h1>Match Tracker</h1>
-        <Button
-          onClick={() => dispatch(loadMatches())}
-          loading={loading}
-          fullWidth={false}
-        >
-          Обновить
-        </Button>
-        {error && <p className={s.error}>{error}</p>}
+        <div className={s.controls}>
+          {error && <ErrorMessage message={error} />}
+          <Button
+            onClick={() => dispatch(loadMatches())}
+            loading={loading}
+            fullWidth={false}
+          >
+            Обновить
+          </Button>
+        </div>
       </div>
 
       {loading ? (

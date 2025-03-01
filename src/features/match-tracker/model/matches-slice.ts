@@ -21,7 +21,7 @@ export const loadMatches = createAsyncThunk<
 >('matches/loadMatches', async (_, { rejectWithValue }) => {
   try {
     return await fetchMatches();
-  } catch (error) {
+  } catch {
     return rejectWithValue('Ошибка: не удалось загрузить информацию');
   }
 });
@@ -40,9 +40,9 @@ const matchesSlice = createSlice({
         state.loading = false;
         state.matches = action.payload;
       })
-      .addCase(loadMatches.rejected, (state) => {
+      .addCase(loadMatches.rejected, (state, action) => {
         state.loading = false;
-        state.error = 'Ошибка: не удалось загрузить информацию';
+        state.error = action.payload || 'Ошибка: не удалось загрузить информацию';
       });
   },
 });
