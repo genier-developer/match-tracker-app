@@ -5,6 +5,7 @@ import { loadMatches } from '../../features/match-tracker/model/matches-slice.ts
 import { MatchList } from '../../features/match-tracker/ui/match-list';
 import s from './match-tracker.module.scss';
 import { useDispatch } from 'react-redux';
+import {Button} from "../../shared/ui/button";
 
 const useAppDispatch = () => useDispatch<AppDispatch>();
 
@@ -19,13 +20,13 @@ export const MatchTracker: FC = () => {
   return (
     <div className={s.matchTracker}>
       <h1>Match Tracker</h1>
-      <button
+      <Button
         onClick={() => dispatch(loadMatches())}
-        disabled={loading}
-        className={s.refreshButton}
+        loading={loading}
+        fullWidth={false}
       >
-        {loading ? 'Загрузка...' : 'Обновить'}
-      </button>
+        Обновить
+      </Button>
       {error && <p className={s.error}>{error}</p>}
       {loading && <p>Загрузка...</p>}
       <MatchList matches={matches} />

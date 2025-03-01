@@ -26,12 +26,14 @@
   font-weight: bold;
 
   &.live {
-    background-color: green;
+    background-color: #43AD28;
+  ;
     color: white;
   }
 
   &.finished {
-    background-color: red;
+    background-color: #EB0237;
+  ;
     color: white;
   }
 }
