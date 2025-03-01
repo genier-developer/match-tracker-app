@@ -14,7 +14,7 @@ const initialState: MatchesState = {
   error: null,
 };
 
-export const loadMatches = createAsyncThunk('matches/loadMatches', async () => {
+export const loadMatches = createAsyncThunk<Match[]>('matches/loadMatches', async () => {
   return await fetchMatches();
 });
 

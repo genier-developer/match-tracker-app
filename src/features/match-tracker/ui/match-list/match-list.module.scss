@@ -1,0 +1,37 @@
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.matchItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.team {
+  flex: 1;
+  text-align: center;
+}
+
+.score {
+  flex: 0 0 60px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+
+  &.live {
+    background-color: green;
+    color: white;
+  }
+
+  &.finished {
+    background-color: red;
+    color: white;
+  }
+}
