@@ -2,38 +2,59 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .matchItem {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--white-white-2);
+  border-radius: 4px;
+  background-color: var(--dark-bg);
+  color: var(--white-white-1);
+}
+
+.scoreContainer {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  gap: 10px;
+}
+
+.teamContainer {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+  width: 171px;
+  height: 48px;
 }
 
 .team {
-  flex: 1;
-  text-align: center;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--white-white-1);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
 }
 
 .score {
   flex: 0 0 60px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 5px;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 4px;
+  font-weight: var(--font-weight-bold);
+  color: var(--white-white-1);
+}
 
-  &.live {
-    background-color: #43AD28;
-  ;
-    color: white;
-  }
-
-  &.finished {
-    background-color: #EB0237;
-  ;
-    color: white;
-  }
+.statusContainer {
+  display: flex;
+  justify-content: center;
 }
