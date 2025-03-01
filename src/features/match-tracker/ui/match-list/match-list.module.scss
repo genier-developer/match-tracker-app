@@ -8,8 +8,8 @@
 
 .matchItem {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  border: 1px solid var(--white-white-1);
   padding: 16px;
   border-radius: 4px;
   background-color: var(--dark-bg);

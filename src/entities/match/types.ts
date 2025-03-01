@@ -11,7 +11,7 @@ export type Team = {
   total_kills: number;
 }
 
-export type MatchStatus = 'Live' | 'Finished' | 'Ongoing';
+export type MatchStatus = 'Live' | 'Finished' | 'Ongoing' | 'Scheduled';
 
 export type Match = {
   time: string;

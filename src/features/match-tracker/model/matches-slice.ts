@@ -14,8 +14,16 @@ const initialState: MatchesState = {
   error: null,
 };
 
-export const loadMatches = createAsyncThunk<Match[]>('matches/loadMatches', async () => {
-  return await fetchMatches();
+export const loadMatches = createAsyncThunk<
+  Match[],
+  void,
+  { rejectValue: string }
+>('matches/loadMatches', async (_, { rejectWithValue }) => {
+  try {
+    return await fetchMatches();
+  } catch (error) {
+    return rejectWithValue('Ошибка: не удалось загрузить информацию');
+  }
 });
 
 const matchesSlice = createSlice({

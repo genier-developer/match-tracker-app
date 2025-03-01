@@ -19,17 +19,23 @@ export const MatchTracker: FC = () => {
 
   return (
     <div className={s.matchTracker}>
-      <h1>Match Tracker</h1>
-      <Button
-        onClick={() => dispatch(loadMatches())}
-        loading={loading}
-        fullWidth={false}
-      >
-        Обновить
-      </Button>
-      {error && <p className={s.error}>{error}</p>}
-      {loading && <p>Загрузка...</p>}
-      <MatchList matches={matches} />
+      <div className={s.header}>
+        <h1>Match Tracker</h1>
+        <Button
+          onClick={() => dispatch(loadMatches())}
+          loading={loading}
+          fullWidth={false}
+        >
+          Обновить
+        </Button>
+        {error && <p className={s.error}>{error}</p>}
+      </div>
+
+      {loading ? (
+        <p>Загрузка...</p>
+      ) : (
+        <MatchList matches={matches} />
+      )}
     </div>
   );
 };

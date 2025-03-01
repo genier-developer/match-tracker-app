@@ -16,7 +16,7 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
   return (
     <div className={s.matchList}>
       {matches.map((match) => (
-        <div key={match.title} className={s.matchItem}>
+        <div key={`${match.title}-${match.time}-${match.homeTeam.name}-${match.awayTeam.name}`} className={s.matchItem}>
           <div className={s.scoreContainer}>
             <div className={s.teamContainer}>
               <img src={Icon} alt="Team Icon" className={s.icon} />
@@ -38,7 +38,10 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
                       ? 'green'
                       : match.status === 'Finished'
                         ? 'red'
-                        : 'orange'
+                        : match.status === 'Ongoing'
+                        ? 'orange'
+                        : 'grey'
+
                   }
                   title={match.status}
                 />
