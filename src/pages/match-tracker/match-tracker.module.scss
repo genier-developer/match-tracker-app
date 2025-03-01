@@ -12,6 +12,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+
+  h1 {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-medium);
+  }
 }
 
 .controls {

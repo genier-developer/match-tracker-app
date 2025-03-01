@@ -2,15 +2,18 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--red);
+  color: var(--white-white-1);
+  background: var(--gray-dark);
+  height: 56px;
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
 }
 
 .text {
-  font-size: var(--font-size-s);
-  line-height: var(--line-height-s);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-medium);
+  //line-height: var(--line-height-s);
 }
