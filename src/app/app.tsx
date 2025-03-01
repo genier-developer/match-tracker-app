@@ -1,13 +1,15 @@
 import {MatchTracker} from "../pages/match-tracker";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {FC} from "react";
 
-function App() {
-
+const App: FC = () => {
   return (
-    <>
-      <h1>Match tracker</h1>
-      <MatchTracker/>
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<MatchTracker />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App
