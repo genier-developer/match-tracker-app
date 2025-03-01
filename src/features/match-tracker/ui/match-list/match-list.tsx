@@ -25,9 +25,9 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
 
             <div className={s.scoreAndStatus}>
               <div
-                className={`${s.score} ${
-                  match.status === 'Live' ? s.live : s.finished
-                }`}
+                // className={`${s.score} ${
+                //   match.status === 'Live' ? s.live : s.finished
+                // }`}
               >
                 {match.homeScore} : {match.awayScore}
               </div>
