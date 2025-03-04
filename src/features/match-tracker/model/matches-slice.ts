@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchMatches } from '../api';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Match } from '../../../entities/match/types';
+import {loadMatches} from "../api";
 
 interface MatchesState {
   matches: Match[];
@@ -14,22 +14,15 @@ const initialState: MatchesState = {
   error: null,
 };
 
-export const loadMatches = createAsyncThunk<
-  Match[],
-  void,
-  { rejectValue: string }
->('matches/loadMatches', async (_, { rejectWithValue }) => {
-  try {
-    return await fetchMatches();
-  } catch {
-    return rejectWithValue('Ошибка: не удалось загрузить информацию');
-  }
-});
-
 const matchesSlice = createSlice({
   name: 'matches',
   initialState,
-  reducers: {},
+  reducers: {
+    updateMatchesFromSocket: (state, action: PayloadAction<Match[]>) => {
+      state.matches = action.payload;
+      state.error = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadMatches.pending, (state) => {
@@ -47,4 +40,5 @@ const matchesSlice = createSlice({
   },
 });
 
+export const { updateMatchesFromSocket } = matchesSlice.actions;
 export default matchesSlice.reducer;
