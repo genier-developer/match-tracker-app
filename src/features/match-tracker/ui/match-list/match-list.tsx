@@ -2,7 +2,8 @@ import { Match } from '../../../../entities/match/types.ts';
 import { FC } from 'react';
 import s from './match-list.module.scss';
 import { StatusCard } from "../../../../shared/ui/status-card";
-import Icon from './../../../../shared/assets/icons/icon.svg';
+import ArrowIcon from './../../../../shared/assets/icons/arrow.svg';
+import TeamIcon from './../../../../shared/assets/icons/icon.svg'
 
 interface MatchListProps {
   matches: Match[];
@@ -19,7 +20,7 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
         <div key={`${match.title}-${match.time}-${match.homeTeam.name}-${match.awayTeam.name}`} className={s.matchItem}>
           <div className={s.scoreContainer}>
             <div className={s.teamContainer}>
-              <img src={Icon} alt="Team Icon" className={s.icon} />
+              <img src={TeamIcon} alt="Team Icon" />
               <div className={s.team}>{match.homeTeam.name}</div>
             </div>
 
@@ -47,7 +48,8 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
 
             <div className={s.teamContainer}>
               <div className={s.team}>{match.awayTeam.name}</div>
-              <img src={Icon} alt="Team Icon" className={s.icon} />
+              <img src={TeamIcon} alt="Team Icon" />
+              <img src={ArrowIcon} alt="Arrow Icon" className={s.icon} />
             </div>
           </div>
 
