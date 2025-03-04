@@ -6,7 +6,7 @@ import { loadMatches } from '../../features/match-tracker/api';
 import { MatchList } from '../../features/match-tracker/ui/match-list';
 import s from './match-tracker.module.scss';
 import { Button } from "../../shared/ui/button";
-import { ErrorMessage } from "../../shared/ui/error-message";
+import { ErrorMessage } from "../../widgets/error-message";
 
 const useAppDispatch = () => useDispatch<AppDispatch>();
 const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
@@ -59,7 +59,7 @@ export const MatchTracker: FC = () => {
       console.error('Error initializing socket:', error);
       setSocketError('Ошибка инициализации WebSocket');
     }
-  }, [dispatch, SOCKET_URL]);
+  }, [dispatch]);
 
   // Резервный вариант с периодическим обновлением, если сокет не работает
   useEffect(() => {

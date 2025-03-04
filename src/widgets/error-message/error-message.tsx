@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import s from './error-message.module.scss';
-import AlertTriangle from '../../assets/icons/alert-triangle.svg';
+import AlertTriangle from '../../shared/assets/icons/alert-triangle.svg';
 
 interface ErrorMessageProps {
   message: string;
