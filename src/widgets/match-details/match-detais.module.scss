@@ -1,0 +1,81 @@
+// match-list.module.scss
+.matchList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.matchItem {
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.matchHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 12px;
+}
+
+.teamContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.scoreAndStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-white-1);
+}
+
+.score {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrowContainer {
+  display: flex;
+  align-items: center;
+}
+
+.arrowIcon {
+  width: 14px;
+  height: 7px;
+  transition: transform 0.3s ease;
+}
+
+.arrowIconRotated {
+  transform: rotate(180deg);
+}
+
+.detailsContainer {
+  width: 100%;
+  margin-top: 10px;
+}

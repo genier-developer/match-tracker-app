@@ -1,1 +1,1 @@
-// export {MatchDetails} from './match-details';
+export {MatchDetails} from './match-details';

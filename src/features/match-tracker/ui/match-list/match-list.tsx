@@ -50,6 +50,7 @@ export const MatchList: FC<MatchListProps> = ({ matches }) => {
               <img src={Icon} alt="Team Icon" className={s.icon} />
             </div>
           </div>
+
         </div>
       ))}
     </div>
